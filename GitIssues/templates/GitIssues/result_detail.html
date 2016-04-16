@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if result.ErrorMsg != ""  %}
+<h5>Error Occured : {{ result.ErrorMsg }}</h5>
+
+{% else %}
+<table style="width:100%">
+    <caption>Currently Open Issues in the given repository</caption>
+
+    <tr>
+        <th>Type of Issue</th>
+        <th>Number</th>
+    </tr>
+    <tr>
+        <td>Upto a day old</td>
+        <td>{{ result.OpenIssues1Day }}</td>
+    </tr>
+    <tr>
+        <td>A day to a week old</td>
+        <td>{{ result.OpenIssues1to7Days }}</td>
+    </tr>
+    <tr>
+        <td>More than a week old</td>
+        <td>{{ result.OpenIssues7orMoreDay }}</td>
+    </tr>
+    <tr>
+        <td>Total open issues</td>
+        <td>{{ result.TotalOpenIssues }}</td>
+    </tr>
+</table>
+
+{% endif %}
+
+<center><a href="{% url 'query_list' %}">Have a look at Querie History</a>   /   <a href="{% url 'query_new' %}">Make a New Query</a></center>
+
+{% endblock content %}

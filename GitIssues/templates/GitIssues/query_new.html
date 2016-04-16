@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Provide a public GitHub Repo</h3>
+
+<form method="POST" class="query-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Submit</button>
+</form>
+
+<center><a href="{% url 'query_list' %}">Have a look at Querie History</a></center>
+
+{% endblock content %}

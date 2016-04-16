@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<table style="width:100%">
+    <caption>List of Queries made in past</caption>
+    <tr>
+        <th>Query ID</th>
+        <th>Query Time (UTC)</th>
+        <th>Queried Repository</th>
+        <th>User Name</th>
+
+    </tr>
+
+    {% for query in queries %}
+
+    <tr>
+        <td>{{ query.id }}</td>
+        <td>{{ query.query_date }}</td>
+        <td><a href="{% url 'result_detail' query.id %}">{{ query.GitHubPublicRepo }}</a></td>
+        <td>{{ query.userName }}</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+
+<center><a href="{% url 'query_new' %}">Make a new query</a></center>
+
+{% endblock content %}
