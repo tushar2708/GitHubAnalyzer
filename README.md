@@ -2,11 +2,11 @@
 It's a Django project to extract data using GitHub APIs:
 
 
-##Active demo of the application :
+##Active demo of the application
 
 `http://tdwivedi2708.pythonanywhere.com/`
 
-##Steps to deploy the app locally :
+##Steps to deploy the app locally
 
 
 * Get the source code :
