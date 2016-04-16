@@ -9,10 +9,15 @@ from GitIssues.models import Result
 from GitIssues.forms import QueryForm
 
 # Create your views here.
+'''
+    View to list queries made in past
+'''
 @login_required
 def query_list(request):
     try:
-        queries = sorted(Query.objects.exclude(GitHubPublicRepo=""), reverse= True)
+        qries = Query.objects.exclude(GitHubPublicRepo="")
+        #queries.sort(key=lambda x: x.id, reverse=True)
+        queries = sorted(qries, key=lambda x: x.id, reverse=True)
     except Query.DoesNotExist:
         raise Http404('No Valid Query exists in history')
     return render(request, 'GitIssues/query_list.html', {
@@ -20,7 +25,7 @@ def query_list(request):
         })
 
 '''
-    View to accept new query on home pag
+    View to accept new query on home page
 '''
 @login_required
 def query_new(request):
