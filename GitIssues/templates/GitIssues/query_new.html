@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<h3>Provide a public GitHub Repo</h3>
+<h3>Provide a public GitHub Repo (Eg. https://github.com/antirez/redis)</h3>
 
 <form method="POST" class="query-form">{% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="save btn btn-default">Submit</button>
 </form>
 
-<center><a href="{% url 'query_list' %}">Have a look at Querie History</a></center>
+<center><a href="{% url 'query_list' %}">Have a look at the Query History</a></center>
 
 {% endblock content %}
