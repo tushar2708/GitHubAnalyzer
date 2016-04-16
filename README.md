@@ -69,7 +69,8 @@ By default, we fetch 100 results per page (max possible value, supported by the 
 ##TODO List for future
 
 * To figure out a mechanism to cache the user queries, and first checking the existing results, to provide the results.
-* Providing sorting based on different column names, on the query_list page
+* To add support for finding out closed issues as well, just like open issues.
+* Providing sorting based on different column names, on the query_list page.
 * Using authorised API calls on GitHub to get a higher request/hour rate.
-* Figuring out a better platform to deploy the app, by exploring services like heroku, openshift, etc
-* In future, I intend to scale this project to make an app to prepare a rank of most active GitHub repositories (based on ratio of "number of issues being closed" to "issues being opened", or some other criteria)
+* Figuring out a better platform to deploy the app, by exploring services like heroku, openshift, etc.
+* In future, I also intend to scale this project to make an app to prepare a rank of most active GitHub repositories (based on ratio of "number of issues being closed" to "issues being opened", or some other criteria).
